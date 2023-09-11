@@ -2,8 +2,9 @@
 from django.shortcuts import render, redirect
 from .models import Books
 from .forms import Forms
+from django.views.decorators.csrf import csrf_exempt
 
-
+@csrf_exempt
 def show_main(request) :
     context = {
         'name': 'Sabrina Atha Shania',

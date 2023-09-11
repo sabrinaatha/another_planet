@@ -27,7 +27,7 @@
     
         <h3>Add your book collections</h3>
         <form method="post">
-            {% csrf_token %}
+            {% comment %} {% csrf_token %} {% endcomment %}
             {{ form.as_p }}
             <button type="submit">Add</button>
 
