@@ -1,3 +1,4 @@
+# Create your views here.
 from django.shortcuts import render, redirect
 from .models import Books
 from .forms import Forms
@@ -22,4 +23,4 @@ def show_main(request) :
             return redirect("/main")
  
     return render(request, "main.html", {'books': books, 'form': form, 'detail' : context})
-# Create your views here.
+

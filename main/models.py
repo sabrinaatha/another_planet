@@ -1,3 +1,4 @@
+# Create your models here.
 from django.db import models
 
 class Books(models.Model):
@@ -9,4 +10,3 @@ class Books(models.Model):
         return super().__str__()
 
 
-# Create your models here.
