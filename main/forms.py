@@ -1,7 +1,7 @@
-from django import forms
-from .models import Books
+from django.forms import ModelForm
+from main.models import Books
 
-class Forms(forms.ModelForm) :
+class ProductForm(ModelForm):
     class Meta:
         model = Books
-        fields = '__all__'
+        fields = ["name", "amount", "description"]

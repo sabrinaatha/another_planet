@@ -2,6 +2,7 @@ Nama    : Sabrina Atha Shania
 NPM     : 2206829591
 Kelas   : PBP A
 
+------------------------------------------------ TUGAS 2 ------------------------------------------------
 Tautan link adaptable : https://galaxylibrary.adaptable.app
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
@@ -88,3 +89,141 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
         - C pada MVC yaitu Controller yang bertindak sebagai perantara antara Model dan View. Mengatur aliran logika aplikasi dan menerima input dari pengguna.
         - T pada MVT yaitu Template yang digunakan untuk merender tampilan dan memisahkan tampilan data dalam aplikasi web.
         - VM pada MVVM yaitu View-Model yang bertindak sebagai perantara antara Model dan View dengan mengambil data dari Model dan memformatnya sehingga dapat dengan mudah ditampilkan di View. 
+
+
+
+------------------------------------------------ TUGAS 3 ------------------------------------------------
+
+1. Apa perbedaan antara form POST dan form GET dalam Django?
+    - Form POST digunakan untuk mengirim data dari formulir ke server untuk mengolahnya, seperti menambahkan data ke database atau mengirim pesan.
+    - Form GET digunakan untuk melakukan pencarian, filter, atau mengambil data yang sudah ada tanpa mengirimkan data tambahan ke server.
+
+    Perbedaan antara form POST dan form GET adalah :
+    1.  POST :
+        - Metode HTTP yang digunakan untuk mengirim data formulir ke server 
+        - Data dikirim dalam tubuh permintaan HTTP, sehingga tidak terlihat dalam URL
+        - Tidak ada batasan nyata pada panjang data yang dapat dikirimkan, sehingga cocok untuk mengirim data yang besar
+        - Lebih aman karena data dikirim dalam metode HTTP yang tidak terlihat dalam URL
+        - Tidak cocok untuk permintaan yang dapat dibookmark karena data tidak terlihat dalam URL, sehingga tidak dapat menyimpan URL dan mengaksesnya kembali dengan parameter yang sama
+        - Biasanya tidak dapat di-cache karena setiap permintaan POST dianggap unik
+
+    2. GET :
+        - Metode HTTP yang digunakan untuk mengambil data dari server
+        - Data dikirim sebagai parameter di URL, sehingga terlihat dalam URL
+        - Panjang URL memiliki batasan, yang dapat berbeda-beda tergantung pada server web dan peramban, sehingga GET lebih cocok ketika data pendek dan sederhana
+        - Kurang aman karena data dikirim dalam metode HTTP yang terlihat dalam URL
+        - Cocok untuk permintaan yang dapat dibookmark karena data terlihat dalam URL, sehingga pengguna dapat menyimpan URL dan mengaksesnya kembali dengan parameter yang sama
+        - Dapat di-cache oleh beberapa peramban atau server proxy karena data terlihat dalam URL
+
+===========================================================================================================
+
+2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+    - XML(eXtensible Markup Language) adalah bahasa markup yang digunakan untuk mendefinisikan dan mengorganisir data terstruktur. XML digunakan untuk menyimpan, mengirim, dan mengolah data dalam format hierarkis yang dapat disesuaikan dengan kebutuhan aplikasi.
+    - JSON (JavaScript Object Notation) adalah format pertukaran data yang berfokus pada objek dan array. JSON dirancang untuk menjadi ringkas dan mudah dibaca oleh manusia.
+    - HTML (Hypertext Markup Language) adalah bahasa markup yang digunakan untuk membuat halaman web yang dapat ditampilkan oleh peramban web. HTML digunakan untuk mengatur tampilan dan struktur halaman web.
+
+    1. XML
+    - XML termasuk format serbaguna yang digunakan untuk menyimpan, mengirim, dan mengolah data terstruktur
+    - XML memiliki sintaks yang ketat dan harus mengikuti aturan berhenti dan aturan penutupan tag, contoh:
+    <person>
+        <name>Tata</name>
+        <age>19</age>
+    </person>
+    - XML digunakan dalam berbagai konteks, termasuk pertukaran data antara aplikasi, konfigurasi, penyimpanan data, dan lain lain
+    - XML lebih fleksibel dan mendukung tipe data yang lebih beragam dan lebih kompleks daripada JSON dalam hal representasi data terstruktur.
+
+    2. JSON
+    - JSON lebih ringkas daripada XML dan lebih mudah dibaca oleh manusia
+    - JSON memiliki sintaks yang lebih ringkas dan sederhana dengan pasangan nama-nilai yang menggunakan tanda titik dua, contoh:
+    {
+        "name": "Tata",
+        "age": 19
+    }
+    - JSON digunakan secara luas dalam API web untuk pertukaran data antara server dan klien, konfigurasi dan penyimpanan data terstruktur
+    - JSON lebih ringkas dan lebih efisien dalam hal ukuran data, mudah dipahami oleh manusia, dan lebih sering digunakan dalam kasus pertukaran data ringan
+
+    3. HTML
+    - HTML tidak digunakan untuk pengiriman data secara langsung tetapi digunakan untuk merender halaman web, menampilkan teks, gambar, tautan, dan lainnya.
+    - HTML enggunakan elemen dan tag markup seperti <p> (paragraf), <img> (gambar), dan <a> (tautan)
+    - HTML digunakan untuk membuat halaman web yang dapat dilihat oleh peramban web dan diakses oleh pengguna
+
+===========================================================================================================
+
+3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+    JSON (JavaScript Object Notation) sering digunakan dalam pertukaran data antara aplikasi web modern karena memiliki keunggulan keunggulan dibandingkan yang lainnya dan menjadikannya pilihan yang sangat baik dalam lingkungan ini, diantaranya sebagai berikut.
+
+    - Ringkas dan Mudah Dibaca
+    Data dalam JSON direpresentasikan sebagai pasangan nama-nilai, yang membuatnya sangat intuitif, sehingga pengembang dapat dengan cepat memahami struktur data.
+
+    - Bahasa Agnostik
+    JSON tidak terikat pada bahasa pemrograman tertentu. Pengembang dapat menghasilkan dan mengonsumsi data JSON dari berbagai bahasa pemrograman yang berbeda. Sebagai contoh, data JSON yang dihasilkan oleh server dapat digunakan oleh klien yang ditulis dalam bahasa pemrograman JavaScript, Python, Java, C#, dan lain-lain.
+
+    - Dukungan Browser Built-in
+    Banyak peramban web modern memiliki dukungan bawaan (built-in) untuk parsing dan menghasilkan data JSON, sehingga JSON menjadi pilihan yang ideal untuk berkomunikasi antara peramban dan server web tanpa perlu menggunakan teknik atau pustaka tambahan.
+
+    - Efisiensi dan Kecilnya Ukuran Data
+    JSON adalah format data yang ringan. Data yang dikirim dalam format JSON biasanya memiliki ukuran yang lebih kecil, sehingga dapat mengurangi beban jaringan dan mempercepat pertukaran data.
+
+    - Kompatibilitas dengan JavaScript
+    JSON sangat cocok dengan bahasa pemrograman JavaScript, yang digunakan secara luas dalam pengembangan web. Hal ini menyebabkan JSON mudah digunakan dalam pengembangan aplikasi berbasis web, termasuk aplikasi single-page (SPA) yang populer.
+
+    - Mendukung Struktur Data Terstruktur
+    JSON mendukung berbagai jenis data terstruktur, termasuk objek, array, string, angka, boolean, dan nilai-nilai null. Sehingga, aman untuk merepresentasikan data yang lebih kompleks dan fleksibel.
+
+    - Digunakan dalam RESTful API
+    JSON adalah format pertukaran data yang standar dalam arsitektur RESTful API (Application Programming Interface). API web modern sering menggunakan JSON sebagai format data yang diterima dan dikirimkan oleh server.
+
+    - Komunitas dan Dukungan
+    JSON telah menjadi standar de facto dalam pertukaran data dalam pengembangan web, dan ada banyak dukungan komunitas dan pustaka untuk mengolah data JSON di berbagai bahasa pemrograman.
+
+
+===========================================================================================================
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    1. Membuat input form 
+        - Menambahkan extend base.html pada main.html
+        - Menambahkan file baru bernama forms.py pada main dan menambahkan kode didalamnya
+        - Menambahkan tambahan import pada views.py dan membuat fungsi baru bernama create_books untuk menghasilkan formulir yang dapat menambahkan data produk secara otomatis ketika data di-submit dari form
+        - Mengubah render pada fungsi show_main dalam views menjadi 
+        return render(request, "main.html", {'books': books, 'detail' : context})
+        - Routing dengan mengimport fungsi create_books ke urls.py pada folder main
+        - Menambahkan path url routing create_books ke dalam urlpatterns
+        - Buat berkas html baru dengan nama create_books untuk mengisi form dan submit
+        - Menambahkan kode untuk menampilkan data produk hasil dari form serta tombol "Add New Book" yang akan redirect ke halaman form.
+    
+    2. Menambahkan 5 fungsi pada views.py dalam folder main (show_main, show_xml, show_json, show_xml_by_id, show_json_by_id)
+        - Dalam tiap fungsi ditambahkan kode berikut
+        data = Books.objects.all() (HTML, XML, JSON)
+        data = Books.objects.filter(pk=id) (XML_by_id, JSON_by_id)
+        - Menambahkan return function berupa HttpResponse yang berisi parameter data hasil query yang sudah diserialisasi
+    
+    3. Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+        - Mengimpor fungsi (show_main, show_xml, show_json, show_xml_by_id, show_json_by_id) pada urls.py yang ada pada folder main
+        - Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor
+    
+    4. Menjawab pertanyaan di dalam file README.md
+    5. Mengakses kelima URL menggunakan Postman
+    6. Melakukan git workflow (add, commit, push)
+
+===========================================================================================================
+
+5. Hasil Screenshot postman
+    - HTML
+
+    ![CHEESE!](Images/html1.png)
+    ![CHEESE!](Images/html2.png)
+
+    - XML
+    ![CHEESE!](Images/xml.png)
+
+    - JSON
+    ![CHEESE!](Images/json.png)
+
+    - XML by id
+    ![CHEESE!](Images/xml_by_id.png)
+
+    - JSON by id
+    ![CHEESE!](Images/json_by_id.png)
+
+
+
