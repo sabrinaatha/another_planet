@@ -13,13 +13,12 @@
     </head>
     <body>
         <h1> Book Collections of Galaxy Library </h1>
-        <p> Title of Application : {{detail.application_name}} </p>
-        <p> Name : {{detail.name}} </p>
-        <p> NPM : {{detail.NPM}} </p>
-        <p> Class : {{detail.class}} </p>
+        <p> Title of Application : {{application_name}} </p>
+        <p> Name : {{name}} </p>
+        <p> NPM : {{NPM}} </p>
+        <p> Class : {{class}} </p>
 
         <h3>List of Books</h3>
-        <form method="post">
             <ol>
                 {% for book in books %}
                     <li>
@@ -29,7 +28,6 @@
                     </li>
                 {% endfor %}
             </ol>
-        </form>
         
         <a href="{% url 'main:create_books' %}">
             <button>
