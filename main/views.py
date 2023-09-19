@@ -9,11 +9,14 @@ from django.core import serializers
 
 def show_main(request) :
     books = Item.objects.all()
+    count = books.count()
+
     context = {
         'name': 'Sabrina Atha Shania',
         'class': 'PBP-A',
         'NPM': '2206829591',
         'application_name': 'Galaxy Library',
+        'count': count,
         'books': books,
     }
     Item.objects.get_or_create(name='Harry Potter and the Philosopher\'s Stone', amount=10, description= 'The first book in the Harry Potter series was entitled Harry Potter and the Philosopher\'s Stone. This series opening novel is the part that introduces every important character in the Harry Potter story. The story in this first novel comes from the story of Harry Potter, who for 11 years has lived a miserable life with his cousin\'s family.')
