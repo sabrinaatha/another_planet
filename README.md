@@ -35,6 +35,7 @@ Kelas   : PBP A
     - HTML (Hypertext Markup Language) adalah bahasa markup yang digunakan untuk membuat halaman web yang dapat ditampilkan oleh peramban web. HTML digunakan untuk mengatur tampilan dan struktur halaman web.
 
     1. XML
+    - self-descriptive
     - XML termasuk format serbaguna yang digunakan untuk menyimpan, mengirim, dan mengolah data terstruktur
     - XML memiliki sintaks yang ketat dan harus mengikuti aturan berhenti dan aturan penutupan tag, contoh:
     <person>
@@ -43,8 +44,11 @@ Kelas   : PBP A
     </person>
     - XML digunakan dalam berbagai konteks, termasuk pertukaran data antara aplikasi, konfigurasi, penyimpanan data, dan lain lain
     - XML lebih fleksibel dan mendukung tipe data yang lebih beragam dan lebih kompleks daripada JSON dalam hal representasi data terstruktur.
+    - XML Prolog bersifat opsional, akan tetapi jika ada maka posisinya harus berada di awal dokumen XML
+    - Pada dokumen XML semua elemen wajib memiliki closing tag
 
     2. JSON
+    - self-describing
     - JSON lebih ringkas daripada XML dan lebih mudah dibaca oleh manusia
     - JSON memiliki sintaks yang lebih ringkas dan sederhana dengan pasangan nama-nilai yang menggunakan tanda titik dua, contoh:
     {
@@ -53,6 +57,7 @@ Kelas   : PBP A
     }
     - JSON digunakan secara luas dalam API web untuk pertukaran data antara server dan klien, konfigurasi dan penyimpanan data terstruktur
     - JSON lebih ringkas dan lebih efisien dalam hal ukuran data, mudah dipahami oleh manusia, dan lebih sering digunakan dalam kasus pertukaran data ringan
+    - Value dapat berupa tipe data primitif (string, number, boolean) ataupun berupa objek
 
     3. HTML
     - HTML tidak digunakan untuk pengiriman data secara langsung tetapi digunakan untuk merender halaman web, menampilkan teks, gambar, tautan, dan lainnya.
