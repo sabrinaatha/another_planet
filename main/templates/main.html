@@ -35,6 +35,15 @@
                 Add New Book
             </button>
         </a>
+
+        <p> Logged in as : {{account_name}}</p>
+        <h5>Sesi terakhir login: {{ last_login }}</h5>
+        <a href="{% url 'main:logout' %}">
+            <button>
+                Logout
+            </button>
+        </a>
+
     </body>
 </html>
 

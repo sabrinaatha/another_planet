@@ -1,39 +1,78 @@
 # Create your views here.
+import datetime
 from django.shortcuts import render, redirect
 from .models import Item
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from main.forms import ProductForm
 from django.urls import reverse
-from django.http import HttpResponse
 from django.core import serializers
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages  
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/login')
 def show_main(request) :
-    books = Item.objects.all()
+    books = Item.objects.filter(user=request.user)
     count = books.count()
 
     context = {
         'name': 'Sabrina Atha Shania',
+        'account_name': request.user.username,
         'class': 'PBP-A',
         'NPM': '2206829591',
         'application_name': 'Galaxy Library',
         'count': count,
         'books': books,
+        'last_login': request.COOKIES['last_login'],
     }
-    Item.objects.get_or_create(name='Harry Potter and the Philosopher\'s Stone', amount=10, description= 'The first book in the Harry Potter series was entitled Harry Potter and the Philosopher\'s Stone. This series opening novel is the part that introduces every important character in the Harry Potter story. The story in this first novel comes from the story of Harry Potter, who for 11 years has lived a miserable life with his cousin\'s family.')
-    Item.objects.get_or_create(name='Harry Potter and the Chamber of Secrets', amount=35, description= 'The second book in the Harry Potter series is entitled Harry Potter and the Chamber of Secrets. This second book tells the story of Harry Potter and his friends when their school was in an uproar because of a mysterious terror. Harry and his friends then have to face threats from monsters that are in the Chamber of Secrets at Hogwarts.')
-    Item.objects.get_or_create(name='Harry Potter and the Prisoner of Azkaban', amount=28, description='The story of the adventures of Harry Potter and his friends continues in the third book in the series, namely Harry Potter and the Prisoner of Azkaban. This third book in the series tells the story of Harry Potter and his friends who have to face threats from mysterious prisoners who have escaped from Azkaban, the most stringent wizard prison in the wizarding world.')
- 
+
     return render(request, "main.html", context)
 
 def create_books(request):
     form = ProductForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
-        form.save()
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
         return HttpResponseRedirect(reverse('main:show_main'))
 
     context = {'form': form}
     return render(request, "create_books.html", context)
+
+def register(request):
+    form = UserCreationForm()
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your account has been successfully created!')
+            return redirect('main:login')
+    context = {'form':form}
+    return render(request, 'register.html', context)
+
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            response = HttpResponseRedirect(reverse("main:show_main")) 
+            response.set_cookie('last_login', str(datetime.datetime.now()))
+            return response
+        else:
+            messages.info(request, 'Sorry, incorrect username or password. Please try again.')
+    context = {}
+    return render(request, 'login.html', context)
+
+def logout_user(request):
+    logout(request)
+    response = HttpResponseRedirect(reverse('main:login'))
+    response.delete_cookie('last_login')
+    return response
 
 def show_xml(request):
     data = Item.objects.all()

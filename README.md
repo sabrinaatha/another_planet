@@ -4,6 +4,111 @@ NPM     : 2206829591
 
 Kelas   : PBP A
 
+------------------------------------------------ TUGAS 4 ------------------------------------------------
+1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+    UserCreationForm adalah impor formulir bawaan yang memudahkan pembuatan formulir pendaftaran pengguna baru dalam aplikasi web. Dengan formulir ini, pengguna baru dapat mendaftar dengan mudah di situs web Anda tanpa harus menulis kode dari awal. 
+    Untuk menggunakan UserCreationForm, kita perlu mengimpornya dari Django.contrib.auth.forms.
+
+    Kelebihan :
+    - Mudah digunakan dalam pembuatan formulir pendaftaran pengguna baru
+    - Diatur untuk berinteraksi langsung dengan model User yang ada di Django (integrasi dengan model), jadi tidak perlu merancang kembali model pengguna atau database yang terkait dengannya
+    - Mencakup validasi bawaan untuk memastikan bahwa username unik, password aman, dan pengguna telah mengonfirmasi kata sandi dengan benar
+    - Mudah menyesuaikan tampilan dan perilaku formulir ini sesuai dengan kebutuhan Anda
+
+    Kekurangan :
+    - Tidak menyediakan template desain, sehingga mungkin perlu merancang formulir kustom dari awal
+    - Fitur tambahan terbatas, sehingga apabila memerlukan fitur tambahan seperti pengumpulan profil pengguna yang lebih kaya, mungkin perlu menambahkan formulir tambahan atau membuat formulir kustom
+    - Bahasa bawaan pada field dalam UserCreationForm sudah ditentukan oleh Django, jadi jika ingin menggunakan nama field yang berbeda, perlu menyesuaikan model User dan formulirnya
+
+===========================================================================================================
+
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+    Autentikasi adalah proses verifikasi identitas pengguna dengan menentukan apakah pengguna yang mencoba mengakses aplikasi adalah pengguna yang mereka klaim. Sistem autentikasi memeriksa apakah informasi yang diberikan cocok dengan yang ada di database pengguna. Apabila cocok, pengguna dianggap berhasil melakukan autentikasi. Django menyediakan sistem autentikasi bawaan yang dapat digunakan untuk mengelola autentikasi pengguna dengan mudah, termasuk penggunaan model User.
+
+    Otorisasi adalah proses yang menentukan izin apa yang dimiliki oleh pengguna dengan mengatur apa yang diizinkan atau tidak diizinkan oleh pengguna tersebut. Sistem otorisasi ini dilakukan setelah proses autentikasi selesai. Sistem otorisasi akan menentukan apakah pengguna tersebut memiliki izin untuk melakukan tindakan tertentu, seperti mengedit profilnya sendiri atau mengakses halaman tertentu dalam aplikasi. Django memiliki sistem otorisasi yang berbasis pada penggunaan decorator (misalnya @login_required) dan mixin yang memungkinkan untuk mengontrol izin akses ke tampilan dan fungsi aplikasi.
+
+    Berikut poin poin dari autentikasi dan otorisasi:
+    1. Autentikasi memastikan bahwa pengguna hanya bisa mengakses akun mereka sendiri, sedangkan otorisasi membatasi tindakan apa yang dapat dilakukan oleh pengguna yang sudah diautentikasi 
+    2. Autentikasi memungkinkan aplikasi mengenali pengguna, yang dapat mengarah pada pengalaman pengguna yang lebih personal dan disesuaikan, sementara otorisasi memastikan bahwa pengguna hanya dapat melihat dan mengakses bagian aplikasi yang relevan.
+
+    Alasan keduanya penting yaitu:
+    1. Membantu melindungi data sensitif dan mencegah akses yang tidak sah
+    2. Sebagai persyaratan hukum dan etika yang memastikan bahwa hanya pengguna yang berwenang yang dapat mengakses dan mengubah data tertentu
+    3. Sebagai pengelolaan hak akses berdasarkan peran pengguna
+    4. Menyesuaikan dengan pengalaman pengguna
+
+===========================================================================================================
+
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+    Cookies adalah potongan kecil data yang disimpan di sisi client oleh aplikasi web. Cookies digunakan dalam konteks aplikasi web untuk menyimpan informasi yang dapat diakses kembali oleh server web atau aplikasi. Cookies sering digunakan untuk mengelola data sesi pengguna, melacak preferensi, mengidentifikasi pengguna, dan banyak tujuan lainnya.
+    
+    Cookie, juga dikenal sebagai Cookie HTTP, adalah file teks kecil yang dibuat dan dikelola oleh browser sebagai respons terhadap permintaan Server Web tertentu. Browser Anda menyimpannya secara lokal, dan sebagian besar browser akan menampilkan cookie yang dibuat berdasarkan pengaturan Privasi dan Keamanan.Cookie memudahkan penggabungan fitur tertentu yang sebelumnya tidak mungkin dilakukan menggunakan HTTP.
+
+    Dalam konteks Django, cookies juga digunakan untuk mengelola data sesi pengguna. Django menggunakan cookies untuk mengelola data sesi pengguna melalui sebuah mekanisme yang disebut session cookies. Ini adalah cara yang umum digunakan untuk menyimpan informasi sesi pengguna di aplikasi web. Cookie Django berfungsi dengan cara yang sama seperti permintaan HTTP lainnya di Internet. Keuntungan menggunakan cookies dan mekanisme sesi seperti yang disediakan oleh Django adalah:
+    - HTTP adalah protokol yang stateless, yang berarti server tidak dapat secara alami mengingat informasi antara permintaan dari pengguna. 
+    - Cookies memungkinkan pengguna menyediakan pengalaman yang lebih personal untuk pengguna dengan mengingat preferensi mereka dan status sesi mereka.
+    - Informasi sensitif (seperti token otentikasi) dapat disimpan dalam sesi yang dienkripsi di server, sehingga tidak terekspos di perangkat pengguna.
+    
+    Berikut adalah bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna:  
+    1. Permintaan dikirim ke server oleh browser
+        Ketika pengguna mengakses sebuah situs web dengan menggunakan browser, browser tersebut akan membuat permintaan HTTP ke server yang meng-host situs web tersebut. Permintaan ini dapat berisi berbagai informasi, seperti URL tujuan, jenis permintaan (misalnya GET atau POST), header permintaan, dan lain-lain.
+
+    2. Server mengirimkan respons ke browser bersama dengan satu atau lebih cookie
+        Setelah menerima permintaan dari browser, server akan memproses permintaan tersebut dan menghasilkan respons yang biasanya berisi konten HTML, gambar, data lain yang diminta oleh pengguna, atau cookie dalam respons.
+
+    3. Cookie yang diterima browser dari server disimpan. Mulai sekarang, setiap kali permintaan dibuat ke server, browser akan mengirimkan cookie ini ke server hingga cookie tersebut habis masa berlakunya
+        Setelah menerima cookie dari server, browser akan menyimpannya secara lokal pada perangkat pengguna. Ketika pengguna membuat permintaan berikutnya ke server, browser akan secara otomatis mengirimkan cookie tersebut ke server sebagai bagian dari header permintaan. Ini memungkinkan server untuk mengenali dan mengidentifikasi pengguna yang sudah terotentikasi atau menyimpan preferensi pengguna.
+
+    4. Cookie akan dihapus dari browser jika sudah habis masa berlakunya
+        Setiap cookie memiliki waktu masa berlaku (expire time) yang ditentukan oleh server saat mengirimkannya. Ketika waktu masa berlaku ini habis, browser akan menghapus cookie tersebut dari penyimpanan lokal. Hal ini menjadi mekanisme yang penting untuk menjaga privasi dan keamanan pengguna. Ketika cookie habis masa berlakunya, pengguna tidak lagi diidentifikasi atau tidak lagi memiliki informasi sesi yang tersimpan di browser.
+
+===========================================================================================================
+
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+    Penggunaan cookies dalam pengembangan web dapat aman jika diimplementasikan dan dikelola dengan baik. Namun, ada potensi risiko keamanan yang perlu diwaspadai. Berikut adalah beberapa risiko potensial yang terkait dengan penggunaan cookies:
+    1. Jika informasi pribadi atau sensitif disimpan dalam cookies tanpa enkripsi yang memadai, ada potensi bahwa informasi tersebut dapat diakses oleh pihak yang tidak berwenang sehingga terjadi pelanggaran keamanan    
+    2. Beberapa orang menganggap pelanggaran privasi pada cookies yang dapat digunakan oleh pihak-pihak tertentu (seperti iklan daring) untuk melacak perilaku pengguna secara online
+    4. Penyerang dapat mencoba memanipulasi isi cookie dengan cara yang merusak. Cross-Site Scripting adalah serangan di mana penyerang menyisipkan kode skrip berbahaya ke dalam halaman web yang akan dilihat oleh pengguna lain. Jika cookies disisipkan dengan kode skrip, ini dapat digunakan untuk mencuri informasi dari pengguna yang terpengaruh.
+
+   Berdasarkan risiko potensial penggunaan cookies diatas, pengembang perlu memitigasi risiko potensial yang terkait dengan cookies, berikut beberapa praktik terbaik yang dapat diikuti:
+   1. Gunakan HTTPS untuk mengamankan transmisi data antara browser dan server, sehingga cookie tidak dapat dengan mudah disadap
+   2. Enkripsi cookie sensitif atau informasi yang perlu diterapkan dan dilindungi. Pastikan untuk menggunakan cookie yang memiliki atribut "Secure" untuk memastikan bahwa mereka hanya dikirimkan melalui koneksi HTTPS
+   3. Tetapkan masa berlaku yang wajar untuk cookie, terutama cookie sesi, dan pastikan bahwa mereka dihapus setelah tidak lagi diperlukan
+   4. Pastikan bahwa aplikasi tidak menyisipkan data yang tidak terpercaya secara langsung ke dalam cookie tanpa validasi atau sanitasi yang memadai
+   5. Berikan pengguna opsi untuk mengelola cookie, termasuk menolak cookie yang tidak diperlukan atau tidak diinginkan.
+
+===========================================================================================================
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    1. Mengimplementasikan fungsi registrasi, login, dan logout
+    - Menjalankan virtual envinronment
+    - Mengimport seluruh library yang dibutuhkan
+    - Memasukkan fungsi register, login, dan logout ke dalam views.main
+    - Membuat file html untuk register dan login di dalam folder main/templates
+    - Menambahkan button di dalam main.html untuk logout
+    - Mengimport function yang sudah dibuat ke dalam urls.py di main
+    - Menambahkan path kearah function 
+
+    2. Membuat dua akun pengguna dengan masing-masing tiga dummy data
+    - Membuat akun dan mengisi data datanya melalui localhost:8000/
+
+    3. Menghubungkan model Item dengan User
+    - Menambahkan kode "from django.contrib.auth.models import User" pada main.models
+    - Tambahkan kode "user = models.ForeignKey(User, on_delete=models.CASCADE)" pada class Item
+    - Tambahkan kode "product.user = request.user dan product.save()" pada function create_books di views
+    - Ubah books.objects.all() jadi books.object.filter(user=request.user) pada show_main di views
+    - Simpan perubahan dengan makemigrations, masukkan input 1 sebagai default value dan input 1 sebagai user ID
+    - Lakukan makemigrations dan migrate untuk migrasi model dan menyimpan data 
+
+    4. Menampilkan detail informasi pengguna yang sedang logged in
+    - Pastikan web dalam kondisi logged out
+    - Menkstriksi halaman main dengan menambahkan "from django.contrib.auth.decorators import login_required" sebagai syarat masuk halaman harus melalui login
+    - Set cookies dengan kode "response.set_cookie('last_login', str(datetime.datetime.now()))" dan tambahkan kode "'last_login': request.COOKIES['last_login']," pada context di views.main
+    - Menambahkan kode pada function log out dengan "response.delete_cookie('last_login')"
+    - Menambahkan kode html untuk detail informasi logged in dan last login
+
+    5. Menjawab pertanyaan di dalam file README.md
+    6. Melakukan git workflow (add, commit, push)
 ------------------------------------------------ TUGAS 3 ------------------------------------------------
 
 1. Apa perbedaan antara form POST dan form GET dalam Django?
