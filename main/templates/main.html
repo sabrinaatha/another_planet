@@ -26,11 +26,29 @@
                         <h4>Name of this book : {{book.name}}</h4>
                         <p>Amount of this book : {{book.amount}}</p>
                         <p>Description : {{book.description}}</p>
+                        <a href="{% url 'main:add_item' book.id %}">
+                            <button>
+                                Add amount
+                            </button>
+                        </a> 
+                        <br>
+                        <a href="{% url 'main:subtract_item' book.id %}">
+                            <button>
+                                Subtract amount
+                            </button>
+                        </a> 
+                        <br>
+                        <a href="{% url 'main:delete_item' book.id %}">
+                            <button>
+                                Delete
+                            </button>
+                        </a> 
+                        
                     </li>
                 {% endfor %}
             </ol>
         
-        <a href="{% url 'main:create_books' %}">
+        <a href="{% url 'main:create_books'%}">
             <button>
                 Add New Book
             </button>

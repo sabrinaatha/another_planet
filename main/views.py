@@ -1,6 +1,6 @@
 # Create your views here.
 import datetime
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Item
 from django.http import HttpResponseRedirect, HttpResponse
 from main.forms import ProductForm
@@ -40,6 +40,31 @@ def create_books(request):
 
     context = {'form': form}
     return render(request, "create_books.html", context)
+
+def delete_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    
+    if request.method == 'POST':
+        if request.user == item.user:
+            item.delete()
+            return redirect('main:show_main') 
+    return render(request, 'delete_item.html', {'item': item})
+
+def add_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    
+    if request.user == item.user:
+        item.amount += 1
+        item.save()
+        return redirect('main:show_main') 
+
+def subtract_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    
+    if request.user == item.user:
+        item.amount -= 1
+        item.save()
+        return redirect('main:show_main') 
 
 def register(request):
     form = UserCreationForm()
