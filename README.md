@@ -9,9 +9,9 @@ Kelas   : PBP A
     Elemen selector terdiri dari 3 jenis, Element selector, Id selector, dan Class selector yang memiliki manfaat tersendiri, diantaranya sebagai berikut.
     
     - Element Selector, dapat digunakan ketika ingin mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Manfaatnya yaitu:
-    1. Dapat mengatur gaya elemen-elemen tertentu secara konsisten di seluruh situs web. Sebagai contoh, Dapat mengubah ukuran font untuk semua judul p di seluruh situs web dengan menggunakan p selector
-    2. Dapat menghindari pengulangan kode CSS yang tidak perlu. Hal ini bermanfaat untuk membuat perubahan global dengan lebih mudah.
-    3. Dapat memiliki fleksibilitas untuk mengubah tampilan elemen-elemen dan menyesuaikan properti CSS seperti warna, ukuran, padding, dan margin.
+        1. Dapat mengatur gaya elemen-elemen tertentu secara konsisten di seluruh situs web. Sebagai contoh, Dapat mengubah ukuran font untuk semua judul p di seluruh situs web dengan menggunakan p selector
+        2. Dapat menghindari pengulangan kode CSS yang tidak perlu. Hal ini bermanfaat untuk membuat perubahan global dengan lebih mudah.
+        3. Dapat memiliki fleksibilitas untuk mengubah tampilan elemen-elemen dan menyesuaikan properti CSS seperti warna, ukuran, padding, dan margin.
 
     - Id Selector, dapat digunakan ketika ingin mengubah properti untuk semua elemen yang menggunakan ID pada tag sebagai selector-nya. ID bersifat unik dalam satu halaman web. ID dapat ditambahkan pada halaman template HTML. Manfaatnya yaitu:
         1. Dapat memiliki tingkat selektivitas yang sangat tinggi dalam hierarki CSS. Ini berarti, aturan CSS pada Id akan memiliki prioritas lebih tinggi dibandingkan dengan selector lainnya, seperti class selector atau element selector.
