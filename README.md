@@ -14,14 +14,14 @@ Kelas   : PBP A
     3. Dapat memiliki fleksibilitas untuk mengubah tampilan elemen-elemen dan menyesuaikan properti CSS seperti warna, ukuran, padding, dan margin.
 
     - Id Selector, dapat digunakan ketika ingin mengubah properti untuk semua elemen yang menggunakan ID pada tag sebagai selector-nya. ID bersifat unik dalam satu halaman web. ID dapat ditambahkan pada halaman template HTML. Manfaatnya yaitu:
-    1. Dapat memiliki tingkat selektivitas yang sangat tinggi dalam hierarki CSS. Ini berarti, aturan CSS pada Id akan memiliki prioritas lebih tinggi dibandingkan dengan selector lainnya, seperti class selector atau element selector.
-    2. Dapat lebih mudah dipahami karena aturan CSS tersebut berlaku secara khusus untuk elemen dengan ID tertentu. Ini dapat membantu dalam pemeliharaan dan debugging kode CSS.
-    3. Dapat memiliki kinerja yang Lebih Baik karena mudah menemukan elemen dengan ID harus unik di seluruh halaman. Ini dapat meningkatkan kinerja ketika merender halaman web yang lebih besar.
+        1. Dapat memiliki tingkat selektivitas yang sangat tinggi dalam hierarki CSS. Ini berarti, aturan CSS pada Id akan memiliki prioritas lebih tinggi dibandingkan dengan selector lainnya, seperti class selector atau element selector.
+        2. Dapat lebih mudah dipahami karena aturan CSS tersebut berlaku secara khusus untuk elemen dengan ID tertentu. Ini dapat membantu dalam pemeliharaan dan debugging kode CSS.
+        3. Dapat memiliki kinerja yang Lebih Baik karena mudah menemukan elemen dengan ID harus unik di seluruh halaman. Ini dapat meningkatkan kinerja ketika merender halaman web yang lebih besar.
 
     - Class Selector, dapat digunakan ketika ingin mengubah properti untuk mengelompokkan elemen dengan karakteristik yang sama. Manfaatnya yaitu:
-    1. Dapat mengelompokkan elemen-elemen yang memiliki kesamaan dalam hal tampilan atau fungsi dengan memberikan class yang sama kepada beberapa elemen HTML yang berbeda, dan kemudian menerapkan gaya yang sama pada semua elemen tersebut dengan mudah.
-    2. Dapat lebih mudah dipelihara karena dapat dengan jelas melihat bahwa class tersebut digunakan untuk menggambarkan gaya atau fungsi tertentu dalam halaman web.
-    3. Dapat memiliki selektivitas yang Lebih Terkontrol. Selector class memiliki tingkat selektivitas yang lebih rendah dibandingkan dengan selector ID. Ini memberikan fleksibilitas dan kendali yang baik dalam mengatur tampilan elemen-elemen.
+        1. Dapat mengelompokkan elemen-elemen yang memiliki kesamaan dalam hal tampilan atau fungsi dengan memberikan class yang sama kepada beberapa elemen HTML yang berbeda, dan kemudian menerapkan gaya yang sama pada semua elemen tersebut dengan mudah.
+        2. Dapat lebih mudah dipelihara karena dapat dengan jelas melihat bahwa class tersebut digunakan untuk menggambarkan gaya atau fungsi tertentu dalam halaman web.
+        3. Dapat memiliki selektivitas yang Lebih Terkontrol. Selector class memiliki tingkat selektivitas yang lebih rendah dibandingkan dengan selector ID. Ini memberikan fleksibilitas dan kendali yang baik dalam mengatur tampilan elemen-elemen.
 
 ==================================================================================
 
