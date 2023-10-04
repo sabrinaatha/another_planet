@@ -27,11 +27,11 @@ Kelas   : PBP A
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
     HTML5 (Hypertext Markup Language 5) adalah versi terbaru dari standar HTML yang digunakan untuk membuat dan mengatur konten web. HTML5 memiliki banyak tag atau elemen yang memungkinkan pengembang web untuk menggambarkan konten dan struktur halaman web secara lebih baik. HTML5 juga memiliki beberapa perbedaan yang dapat menjadi keunggulan dibandingkan HTML, diantaranya sebagai berikut.
-    - Mendukung audio dan video melalui tag <video> ataupun <audio>
-    - Menambahkan elemen-elemen semantik seperti <header>, <nav>, <article>, dan <section> sehingga struktur dokumen lebih jelas
+    - Mendukung audio dan video melalui tag video ataupun audio
+    - Menambahkan elemen-elemen semantik seperti header, nav, article, dan section sehingga struktur dokumen lebih jelas
     - Mengizinkan Javascript berjalan di background karena penggunaan API
     - Grafik vektor merupakan tag seperti svg dan canvas untuk menggantikan ketergantungan pada gambar bitmap
-    - Memperkenalkan elemen-elemen input yang lebih kaya seperti <input type="email> dan <input type="date>, yang memudahkan validasi data
+    - Memperkenalkan elemen-elemen input yang lebih kaya seperti input type="email dan input type="date, yang memudahkan validasi data
     - Memiliki aksesibilitas yang lebih baik
     - Memiliki fitur yang mendukung responsivitas dan desain dapat menyesuaikan dengan berbagai perangkat dan ukuran layar
     - Memiliki penyimpanan lokal, sehingg dapat meningkatkan kinerja aplikasi web dengan mengurangi permintaan ke server.
