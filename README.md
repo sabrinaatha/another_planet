@@ -4,6 +4,90 @@ NPM     : 2206829591
 
 Kelas   : PBP A
 
+------------------------------------------------ TUGAS 5 ------------------------------------------------
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+    Elemen selector terdiri dari 3 jenis, Element selector, Id selector, dan Class selector yang memiliki manfaat tersendiri, diantaranya sebagai berikut.
+    
+    - Element Selector, dapat digunakan ketika ingin mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Manfaatnya yaitu:
+    1. Dapat mengatur gaya elemen-elemen tertentu secara konsisten di seluruh situs web. Sebagai contoh, Dapat mengubah ukuran font untuk semua judul p di seluruh situs web dengan menggunakan p selector
+    2. Dapat menghindari pengulangan kode CSS yang tidak perlu. Hal ini bermanfaat untuk membuat perubahan global dengan lebih mudah.
+    3. Dapat memiliki fleksibilitas untuk mengubah tampilan elemen-elemen dan menyesuaikan properti CSS seperti warna, ukuran, padding, dan margin.
+
+    - Id Selector, dapat digunakan ketika ingin mengubah properti untuk semua elemen yang menggunakan ID pada tag sebagai selector-nya. ID bersifat unik dalam satu halaman web. ID dapat ditambahkan pada halaman template HTML. Manfaatnya yaitu:
+    1. Dapat memiliki tingkat selektivitas yang sangat tinggi dalam hierarki CSS. Ini berarti, aturan CSS pada Id akan memiliki prioritas lebih tinggi dibandingkan dengan selector lainnya, seperti class selector atau element selector.
+    2. Dapat lebih mudah dipahami karena aturan CSS tersebut berlaku secara khusus untuk elemen dengan ID tertentu. Ini dapat membantu dalam pemeliharaan dan debugging kode CSS.
+    3. Dapat memiliki kinerja yang Lebih Baik karena mudah menemukan elemen dengan ID harus unik di seluruh halaman. Ini dapat meningkatkan kinerja ketika merender halaman web yang lebih besar.
+
+    - Class Selector, dapat digunakan ketika ingin mengubah properti untuk mengelompokkan elemen dengan karakteristik yang sama. Manfaatnya yaitu:
+    1. Dapat mengelompokkan elemen-elemen yang memiliki kesamaan dalam hal tampilan atau fungsi dengan memberikan class yang sama kepada beberapa elemen HTML yang berbeda, dan kemudian menerapkan gaya yang sama pada semua elemen tersebut dengan mudah.
+    2. Dapat lebih mudah dipelihara karena dapat dengan jelas melihat bahwa class tersebut digunakan untuk menggambarkan gaya atau fungsi tertentu dalam halaman web.
+    3. Dapat memiliki selektivitas yang Lebih Terkontrol. Selector class memiliki tingkat selektivitas yang lebih rendah dibandingkan dengan selector ID. Ini memberikan fleksibilitas dan kendali yang baik dalam mengatur tampilan elemen-elemen.
+
+==================================================================================
+
+2. Jelaskan HTML5 Tag yang kamu ketahui.
+    HTML5 (Hypertext Markup Language 5) adalah versi terbaru dari standar HTML yang digunakan untuk membuat dan mengatur konten web. HTML5 memiliki banyak tag atau elemen yang memungkinkan pengembang web untuk menggambarkan konten dan struktur halaman web secara lebih baik. HTML5 juga memiliki beberapa perbedaan yang dapat menjadi keunggulan dibandingkan HTML, diantaranya sebagai berikut.
+    - Mendukung audio dan video melalui tag <video> ataupun <audio>
+    - Menambahkan elemen-elemen semantik seperti <header>, <nav>, <article>, dan <section> sehingga struktur dokumen lebih jelas
+    - Mengizinkan Javascript berjalan di background karena penggunaan API
+    - Grafik vektor merupakan tag seperti svg dan canvas untuk menggantikan ketergantungan pada gambar bitmap
+    - Memperkenalkan elemen-elemen input yang lebih kaya seperti <input type="email> dan <input type="date>, yang memudahkan validasi data
+    - Memiliki aksesibilitas yang lebih baik
+    - Memiliki fitur yang mendukung responsivitas dan desain dapat menyesuaikan dengan berbagai perangkat dan ukuran layar
+    - Memiliki penyimpanan lokal, sehingg dapat meningkatkan kinerja aplikasi web dengan mengurangi permintaan ke server.
+
+==================================================================================
+
+3. Jelaskan perbedaan antara margin dan padding.
+    Margin dan padding adalah dua properti penting dalam CSS yang digunakan untuk mengatur tata letak elemen HTML pada halaman web. Mereka memiliki fungsi yang berbeda dan memengaruhi cara elemen-elemen berinteraksi dengan elemen-elemen sekitarnya dalam halaman. Margin memiliki fungsi untuk mengosongkan area di sekitar border (transparan). Padding memiliki fungsi untuk mengosongkan area di sekitar konten (transparan). Perbedaan diantara keduanya diantaranya sebagai berikut.
+    - Margin adalah ruang yang ada di sekitar elemen HTML, sedangkan padding adalah ruang yang ada di sekitar konten elemen HTML
+    - Margin memiliki latar belakang kosong dan biasanya tidak berwarna, sedangkan padding tidak memiliki latar belakang atau warna
+    - Margin dapat memengaruhi tata letak elemen-elemen di sekitarnya, sehingga dapat memengaruhi jarak antara elemen tersebut dan elemen-elemen lainnya di sekitarnya. Sedangkan  Padding tidak berdampak pada elemen-elemen luar
+    - Margin sering digunakan untuk mengontrol jarak antara elemen-elemen dengan menggunakan margin untuk memberikan jarak vertikal atau horizontal antara elemen-elemen. Sedagkan padding memengaruhi ukuran konten dalam elemen, sehingga ukuran elemen tersebut akan menjadi lebih besar
+   
+==================================================================================
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+    Tailwind CSS dan Bootstrap adalah dua framework CSS yang digunakan untuk mempercepat pengembangan tampilan web. Mereka memiliki pendekatan yang berbeda dalam cara mereka memungkinkan pengembang untuk merancang dan menggaya halaman web. Berikut adalah perbedaan antara keduanya.
+
+    - Pendekatan Styling
+    Tailwind adalah framework CSS yang berfokus pada penggunaan kelas utility, di mana dapat menggabungkan kelas-kelas yang ada dalam HTML untuk mengatur gaya elemen. 
+    Bootstrap adalah framework CSS yang berfokus pada penggunaan gaya pre-didesain dengan kelas-kelas yang telah ditentukan dengan memilih komponen-komponen yang telah dibuat sebelumnya dan mengatur elemen dengan cara menggunakan kelas Bootstrap yang sesuai.
+
+    - Ukuran berkas
+    Tailwind cenderung menghasilkan ukuran berkas CSS yang lebih besar karena menyediakan banyak kelas utility yang dapat digunakan. Semakin banyak kelas, maka semakin besar ukuran berkas CSS.
+    Bootstrap memiliki ukuran berkas CSS yang cukup besar dibandingkan tailwind arena menyediakan banyak gaya dan komponen yang sudah siap pakai.
+
+    - Kustomisasi
+    Tailwind sangat fleksibel dalam hal kustomisasi karena dapat mengkustomisasi tampilan dengan mengedit konfigurasi dan mengubah atau menambahkan kelas utility sesuai kebutuhan.
+    Bootstrap juga dapat disesuaikan, tetapi tidak sefleksibel seperti Tailwind. Bootstap perlu melakukan lebih banyak pekerjaan kustomisasi melalui penyesuaian CSS atau menghapus komponen yang tidak diperlukan.
+
+    - Kekurangan waktu pengembangan
+    Tailwind mungkin memerlukan lebih banyak waktu dalam proses pengembangan awal karena harus merancang tampilan dari awal dengan menggabungkan kelas utility.
+    Bootstrap memungkinkan pengembangan yang lebih cepat karena dapat menggunakan komponen yang sudah ada dan hanya melakukan penyesuaian minor.
+
+    Tailwind dan Bootstrap memiliki waktu penggunaan yang berbeda menyesuaikan kebutuhan. Berikut detailnya.
+    - Apabila membutuhkan solusi cepat dan tidak ingin terlalu banyak berurusan dengan styling kustom, maka gunakan Bootstrap
+    - Apabila memiliki desain yang sangat kustom dan ingin lebih banyak kontrol atas gaya elemen, maka gunakan Tailwind karena lebih fleksibel
+    - Apabila ingin mengoptimalkan performa halaman web dengan ukuran berkas CSS yang lebih kecil, Tailwind mungkin lebih unggul karena Anda hanya akan menggunakan kelas yang diperlukan
+    - Bootstrap memiliki dokumentasi yang kuat dan banyak contoh yang mudah diikuti, sehingga cocok untuk pengembang yang baru memulai
+    - Tailwind membutuhkan disiplin dalam penggunaannya karena perlu menggabungkan kelas utility dengan benar dan menghindari pengulangan kode yang tidak perlu
+
+==================================================================================
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    1. Kustomisasi halaman login, register, dan tambah inventori
+        - Melakukan kostumisasi halaman login, dilanjutka dengan halaman register, dan halaman tambah inventori
+        - Menggunakan framework yang tersedia dan sumber source code lainnya yang dapat diakses online
+        - Melakukan perubahan terhadap code dari framework maupun dari sumber lain menyesuaikan dengan keinginan dan kreativitas saya
+        - Memastikan bahwa kode tersebut dapat berjalan sebagai mestinya, termasuk button dan lain lain
+    
+    2. Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card
+        - Menggunakan framework yang tersedia dan sumber source code lainnya yang dapat diakses online
+        - Melakukan kostumisasi dan perubahan menyesuaikan dengan kebutuhan dan keinginan bentuk web
+        - Memastikan bahwa kode tersebut dapat berjalan sebagai mestinya, termasuk button dan lain lain
+    
+    3. Menjawab pertanyaan di dalam file README.md
+    4. Melakukan git workflow (add, commit, push)
+==================================================================================
 ------------------------------------------------ TUGAS 4 ------------------------------------------------
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
     UserCreationForm adalah impor formulir bawaan yang memudahkan pembuatan formulir pendaftaran pengguna baru dalam aplikasi web. Dengan formulir ini, pengguna baru dapat mendaftar dengan mudah di situs web Anda tanpa harus menulis kode dari awal. 
@@ -20,7 +104,7 @@ Kelas   : PBP A
     - Fitur tambahan terbatas, sehingga apabila memerlukan fitur tambahan seperti pengumpulan profil pengguna yang lebih kaya, mungkin perlu menambahkan formulir tambahan atau membuat formulir kustom
     - Bahasa bawaan pada field dalam UserCreationForm sudah ditentukan oleh Django, jadi jika ingin menggunakan nama field yang berbeda, perlu menyesuaikan model User dan formulirnya
 
-===========================================================================================================
+==================================================================================
 
 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
     Autentikasi adalah proses verifikasi identitas pengguna dengan menentukan apakah pengguna yang mencoba mengakses aplikasi adalah pengguna yang mereka klaim. Sistem autentikasi memeriksa apakah informasi yang diberikan cocok dengan yang ada di database pengguna. Apabila cocok, pengguna dianggap berhasil melakukan autentikasi. Django menyediakan sistem autentikasi bawaan yang dapat digunakan untuk mengelola autentikasi pengguna dengan mudah, termasuk penggunaan model User.
@@ -37,7 +121,7 @@ Kelas   : PBP A
     3. Sebagai pengelolaan hak akses berdasarkan peran pengguna
     4. Menyesuaikan dengan pengalaman pengguna
 
-===========================================================================================================
+==================================================================================
 
 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
     Cookies adalah potongan kecil data yang disimpan di sisi client oleh aplikasi web. Cookies digunakan dalam konteks aplikasi web untuk menyimpan informasi yang dapat diakses kembali oleh server web atau aplikasi. Cookies sering digunakan untuk mengelola data sesi pengguna, melacak preferensi, mengidentifikasi pengguna, dan banyak tujuan lainnya.
@@ -62,7 +146,7 @@ Kelas   : PBP A
     4. Cookie akan dihapus dari browser jika sudah habis masa berlakunya
         Setiap cookie memiliki waktu masa berlaku (expire time) yang ditentukan oleh server saat mengirimkannya. Ketika waktu masa berlaku ini habis, browser akan menghapus cookie tersebut dari penyimpanan lokal. Hal ini menjadi mekanisme yang penting untuk menjaga privasi dan keamanan pengguna. Ketika cookie habis masa berlakunya, pengguna tidak lagi diidentifikasi atau tidak lagi memiliki informasi sesi yang tersimpan di browser.
 
-===========================================================================================================
+==================================================================================
 
 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
     Penggunaan cookies dalam pengembangan web dapat aman jika diimplementasikan dan dikelola dengan baik. Namun, ada potensi risiko keamanan yang perlu diwaspadai. Berikut adalah beberapa risiko potensial yang terkait dengan penggunaan cookies:
@@ -77,35 +161,35 @@ Kelas   : PBP A
    4. Pastikan bahwa aplikasi tidak menyisipkan data yang tidak terpercaya secara langsung ke dalam cookie tanpa validasi atau sanitasi yang memadai
    5. Berikan pengguna opsi untuk mengelola cookie, termasuk menolak cookie yang tidak diperlukan atau tidak diinginkan.
 
-===========================================================================================================
+==================================================================================
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
     1. Mengimplementasikan fungsi registrasi, login, dan logout
-    - Menjalankan virtual envinronment
-    - Mengimport seluruh library yang dibutuhkan
-    - Memasukkan fungsi register, login, dan logout ke dalam views.main
-    - Membuat file html untuk register dan login di dalam folder main/templates
-    - Menambahkan button di dalam main.html untuk logout
-    - Mengimport function yang sudah dibuat ke dalam urls.py di main
-    - Menambahkan path kearah function 
+        - Menjalankan virtual envinronment
+        - Mengimport seluruh library yang dibutuhkan
+        - Memasukkan fungsi register, login, dan logout ke dalam views.main
+        - Membuat file html untuk register dan login di dalam folder main/templates
+        - Menambahkan button di dalam main.html untuk logout
+        - Mengimport function yang sudah dibuat ke dalam urls.py di main
+        - Menambahkan path kearah function 
 
     2. Membuat dua akun pengguna dengan masing-masing tiga dummy data
-    - Membuat akun dan mengisi data datanya melalui localhost:8000/
+        - Membuat akun dan mengisi data datanya melalui localhost:8000/
 
     3. Menghubungkan model Item dengan User
-    - Menambahkan kode "from django.contrib.auth.models import User" pada main.models
-    - Tambahkan kode "user = models.ForeignKey(User, on_delete=models.CASCADE)" pada class Item
-    - Tambahkan kode "product.user = request.user dan product.save()" pada function create_books di views
-    - Ubah books.objects.all() jadi books.object.filter(user=request.user) pada show_main di views
-    - Simpan perubahan dengan makemigrations, masukkan input 1 sebagai default value dan input 1 sebagai user ID
-    - Lakukan makemigrations dan migrate untuk migrasi model dan menyimpan data 
+        - Menambahkan kode "from django.contrib.auth.models import User" pada main.models
+        - Tambahkan kode "user = models.ForeignKey(User, on_delete=models.CASCADE)" pada class Item
+        - Tambahkan kode "product.user = request.user dan product.save()" pada function create_books di views
+        - Ubah books.objects.all() jadi books.object.filter(user=request.user) pada show_main di views
+        - Simpan perubahan dengan makemigrations, masukkan input 1 sebagai default value dan input 1 sebagai user ID
+        - Lakukan makemigrations dan migrate untuk migrasi model dan menyimpan data 
 
     4. Menampilkan detail informasi pengguna yang sedang logged in
-    - Pastikan web dalam kondisi logged out
-    - Menkstriksi halaman main dengan menambahkan "from django.contrib.auth.decorators import login_required" sebagai syarat masuk halaman harus melalui login
-    - Set cookies dengan kode "response.set_cookie('last_login', str(datetime.datetime.now()))" dan tambahkan kode "'last_login': request.COOKIES['last_login']," pada context di views.main
-    - Menambahkan kode pada function log out dengan "response.delete_cookie('last_login')"
-    - Menambahkan kode html untuk detail informasi logged in dan last login
+        - Pastikan web dalam kondisi logged out
+        - Menkstriksi halaman main dengan menambahkan "from django.contrib.auth.decorators import login_required" sebagai syarat masuk halaman harus melalui login
+        - Set cookies dengan kode "response.set_cookie('last_login', str(datetime.datetime.now()))" dan tambahkan kode "'last_login': request.COOKIES['last_login']," pada context di views.main
+        - Menambahkan kode pada function log out dengan "response.delete_cookie('last_login')"
+        - Menambahkan kode html untuk detail informasi logged in dan last login
 
     5. Menjawab pertanyaan di dalam file README.md
     6. Melakukan git workflow (add, commit, push)
@@ -132,7 +216,7 @@ Kelas   : PBP A
         - Cocok untuk permintaan yang dapat dibookmark karena data terlihat dalam URL, sehingga pengguna dapat menyimpan URL dan mengaksesnya kembali dengan parameter yang sama
         - Dapat di-cache oleh beberapa peramban atau server proxy karena data terlihat dalam URL
 
-===========================================================================================================
+==================================================================================
 
 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
     - XML(eXtensible Markup Language) adalah bahasa markup yang digunakan untuk mendefinisikan dan mengorganisir data terstruktur. XML digunakan untuk menyimpan, mengirim, dan mengolah data dalam format hierarkis yang dapat disesuaikan dengan kebutuhan aplikasi.
@@ -140,36 +224,36 @@ Kelas   : PBP A
     - HTML (Hypertext Markup Language) adalah bahasa markup yang digunakan untuk membuat halaman web yang dapat ditampilkan oleh peramban web. HTML digunakan untuk mengatur tampilan dan struktur halaman web.
 
     1. XML
-    - self-descriptive
-    - XML termasuk format serbaguna yang digunakan untuk menyimpan, mengirim, dan mengolah data terstruktur
-    - XML memiliki sintaks yang ketat dan harus mengikuti aturan berhenti dan aturan penutupan tag, contoh:
-    <person>
-        <name>Tata</name>
-        <age>19</age>
-    </person>
-    - XML digunakan dalam berbagai konteks, termasuk pertukaran data antara aplikasi, konfigurasi, penyimpanan data, dan lain lain
-    - XML lebih fleksibel dan mendukung tipe data yang lebih beragam dan lebih kompleks daripada JSON dalam hal representasi data terstruktur.
-    - XML Prolog bersifat opsional, akan tetapi jika ada maka posisinya harus berada di awal dokumen XML
-    - Pada dokumen XML semua elemen wajib memiliki closing tag
+        - self-descriptive
+        - XML termasuk format serbaguna yang digunakan untuk menyimpan, mengirim, dan mengolah data terstruktur
+        - XML memiliki sintaks yang ketat dan harus mengikuti aturan berhenti dan aturan penutupan tag, contoh:
+        <person>
+            <name>Tata</name>
+            <age>19</age>
+        </person>
+        - XML digunakan dalam berbagai konteks, termasuk pertukaran data antara aplikasi, konfigurasi, penyimpanan data, dan lain lain
+        - XML lebih fleksibel dan mendukung tipe data yang lebih beragam dan lebih kompleks daripada JSON dalam hal representasi data terstruktur.
+        - XML Prolog bersifat opsional, akan tetapi jika ada maka posisinya harus berada di awal dokumen XML
+        - Pada dokumen XML semua elemen wajib memiliki closing tag
 
     2. JSON
-    - self-describing
-    - JSON lebih ringkas daripada XML dan lebih mudah dibaca oleh manusia
-    - JSON memiliki sintaks yang lebih ringkas dan sederhana dengan pasangan nama-nilai yang menggunakan tanda titik dua, contoh:
-    {
-        "name": "Tata",
-        "age": 19
-    }
-    - JSON digunakan secara luas dalam API web untuk pertukaran data antara server dan klien, konfigurasi dan penyimpanan data terstruktur
-    - JSON lebih ringkas dan lebih efisien dalam hal ukuran data, mudah dipahami oleh manusia, dan lebih sering digunakan dalam kasus pertukaran data ringan
-    - Value dapat berupa tipe data primitif (string, number, boolean) ataupun berupa objek
+        - self-describing
+        - JSON lebih ringkas daripada XML dan lebih mudah dibaca oleh manusia
+        - JSON memiliki sintaks yang lebih ringkas dan sederhana dengan pasangan nama-nilai yang menggunakan tanda titik dua, contoh:
+        {
+            "name": "Tata",
+            "age": 19
+        }
+        - JSON digunakan secara luas dalam API web untuk pertukaran data antara server dan klien, konfigurasi dan penyimpanan data terstruktur
+        - JSON lebih ringkas dan lebih efisien dalam hal ukuran data, mudah dipahami oleh manusia, dan lebih sering digunakan dalam kasus pertukaran data ringan
+        - Value dapat berupa tipe data primitif (string, number, boolean) ataupun berupa objek
 
     3. HTML
-    - HTML tidak digunakan untuk pengiriman data secara langsung tetapi digunakan untuk merender halaman web, menampilkan teks, gambar, tautan, dan lainnya.
-    - HTML enggunakan elemen dan tag markup seperti <p> (paragraf), <img> (gambar), dan <a> (tautan)
-    - HTML digunakan untuk membuat halaman web yang dapat dilihat oleh peramban web dan diakses oleh pengguna
+        - HTML tidak digunakan untuk pengiriman data secara langsung tetapi digunakan untuk merender halaman web, menampilkan teks, gambar, tautan, dan lainnya.
+        - HTML enggunakan elemen dan tag markup seperti <p> (paragraf), <img> (gambar), dan <a> (tautan)
+        - HTML digunakan untuk membuat halaman web yang dapat dilihat oleh peramban web dan diakses oleh pengguna
 
-===========================================================================================================
+==================================================================================
 
 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
     JSON (JavaScript Object Notation) sering digunakan dalam pertukaran data antara aplikasi web modern karena memiliki keunggulan keunggulan dibandingkan yang lainnya dan menjadikannya pilihan yang sangat baik dalam lingkungan ini, diantaranya sebagai berikut.
@@ -199,7 +283,7 @@ Kelas   : PBP A
     JSON telah menjadi standar de facto dalam pertukaran data dalam pengembangan web, dan ada banyak dukungan komunitas dan pustaka untuk mengolah data JSON di berbagai bahasa pemrograman.
 
 
-===========================================================================================================
+==================================================================================
 
 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
     1. Membuat input form 
@@ -227,7 +311,7 @@ Kelas   : PBP A
     5. Mengakses kelima URL menggunakan Postman
     6. Melakukan git workflow (add, commit, push)
 
-===========================================================================================================
+==================================================================================
 
 5. Hasil Screenshot postman
     - HTML
@@ -275,7 +359,7 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
         - Apabila deployment berhasil, link aplikasi Adaptable sudah dapat dibuka oleh teman-teman
 
 
-===========================================================================================================
+==================================================================================
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 
@@ -293,7 +377,7 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
 
    Kaitan antara urls.py, views.py, models.py, dan berkas html adalah urls.py yang bertugas mem-parse argumen dari user dan berkas html yang berisi template web akan memberikan outputnya ke views.py. Selanjutnya, ketika ada query pemanggilan data dari views.py, models.py akan menjembatani pemanggilan data ke database. Kemudian views.py akan menggabungkan dan mengolahnya sehingga menjadi satu halaman web yang utuh.
 
-===========================================================================================================
+==================================================================================
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
@@ -307,7 +391,7 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
 
     Iya, Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, tetapi akan sulit, tidak efisien, tidak efektif, dan tidak produktif. Oleh karena itu, sangat disarankan untuk menggunakan virtual environment dalam pengembangan proyek Django. Melalui penggunakan virtual environment, akan menjadi praktik yang baik dalam pengembangan Django karena memberikan sejumlah keuntungan yang telah dijelaskan sebelumnya, seperti isolasi dependensi, menghindari konflik, dan menjaga kebersihan lingkungan pengembangan.
 
-===========================================================================================================
+==================================================================================
 
 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya
     1. MVC atau dikenal sebagai Model View Controller adalah sebuah pola arsitektur atau desain dalam pengembangan perangkat lunak seperti membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari:
@@ -333,7 +417,7 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
         Bagian yang bertugas sebagai perantara antara Model dan View dengan mengambil data dari Model dan memformatnya sedemikian rupa sehingga dapat dengan mudah ditampilkan di View. 
 
     Perbedaan Virtual environment ini terletak pada bagian ketiga dari MVC, MVT, dan MVVM
-        - C pada MVC yaitu Controller yang bertindak sebagai perantara antara Model dan View. Mengatur aliran logika aplikasi dan menerima input dari pengguna.
-        - T pada MVT yaitu Template yang digunakan untuk merender tampilan dan memisahkan tampilan data dalam aplikasi web.
-        - VM pada MVVM yaitu View-Model yang bertindak sebagai perantara antara Model dan View dengan mengambil data dari Model dan memformatnya sehingga dapat dengan mudah ditampilkan di View. 
+    - C pada MVC yaitu Controller yang bertindak sebagai perantara antara Model dan View. Mengatur aliran logika aplikasi dan menerima input dari pengguna.
+    - T pada MVT yaitu Template yang digunakan untuk merender tampilan dan memisahkan tampilan data dalam aplikasi web.
+    - VM pada MVVM yaitu View-Model yang bertindak sebagai perantara antara Model dan View dengan mengambil data dari Model dan memformatnya sehingga dapat dengan mudah ditampilkan di View. 
 

@@ -13,4 +13,3 @@ class mainTest(TestCase):
     def test_main_url_not_exist(self):
         response = Client().get('/main/')
         self.assertNotEqual(response.status_code, 404)
-

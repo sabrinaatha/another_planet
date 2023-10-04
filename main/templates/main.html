@@ -1,68 +1,196 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
- 
+{% block meta %}
+    <style>
+        .album{
+            background:linear-gradient(#DAFFFB, #DAFFFB);
+        } 
+        @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+         .fw-light {
+            color:#04364A;
+            font-family: "Righteous", cursive;
+            font-weight: bold;
+        } 
+        .lead {
+            font-family: "Righteous", cursive;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color:#04364A;
+        } 
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Righteous", cursive;
+            min-height: 100vh;
+            background-color: #a9c9ff;
+            background-image: linear-gradient(180deg, #DAFFFB 0%, #DAFFFB 100%);
+
+            .container {
+                max-width: 100vw;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-gap: 35px;
+                margin: 30px auto;
+                padding: 0p 0;
+
+                .card {
+                    position: relative;
+                    width: 400px;
+                    height: 700px;
+                    margin: 0 auto;
+                    background: #ffff;
+                    border-radius: 15px;
+                    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+
+                    .face {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &.face1 {
+                            box-sizing: border-box;
+                            padding: 20px;
+
+                            h2 {
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            .java {
+                                background-color: #fffc00;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+
+                            .python {
+                                background-color: #00fffc;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+
+                            .cSharp {
+                                background-color: #fc00ff;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                        }
+
+                        &.face2 {
+                            transition: 0.5s;
+
+                            h2 {
+                                margin: 0;
+                                padding: 0;
+                                font-size: 10em;
+                                color: #fff;
+                                transition: 0.5s;
+                                text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                                z-index: 10;
+                            }
+                        }
+                    }
+                }
+
+                .card:hover .face.face2 {
+                    height: 60px;
+
+                    h2 {
+                        font-size: 2em;
+                    }
+                }
+
+                .card:nth-child(1) .face.face2 {
+                    background-image: linear-gradient(
+                        40deg,
+                        #DAFFFB 0%,
+                        #64CCC5 45%,
+                        #176B87 100%
+                    );
+                    border-radius: 15px;
+                }
+
+                .card:nth-child(2) .face.face2 {
+                    background-image: linear-gradient(
+                        40deg,
+                        #64CCC5 0%,
+                        #176B87 45%,
+                        #DAFFFB 100%
+                    );
+                    border-radius: 15px;
+                }
+
+                .card:nth-child(3) .face.face2 {
+                    background-image: linear-gradient(
+                        40deg,
+                        #176B87 0%,
+                        #64CCC5 45%,
+                        #DAFFFB 100%
+                    );
+                    border-radius: 15px;
+                }
+            }
+        }
+
+    </style> 
+{% endblock meta %}
+
 {% block content %}
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>🪐 Galaxy Library </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
     <body>
-        <h1> Book Collections of Galaxy Library </h1>
-        <p> Title of Application : {{application_name}} </p>
-        <p> Name : {{name}} </p>
-        <p> NPM : {{NPM}} </p>
-        <p> Class : {{class}} </p>
-
-        <p> Kamu telah menambahkan {{ count }} items buku pada Galaxy Library! </p>
-        <h3>List of Books</h3>
-            <ol>
-                {% for book in books %}
-                    <li>
-                        <h4>Name of this book : {{book.name}}</h4>
-                        <p>Amount of this book : {{book.amount}}</p>
-                        <p>Description : {{book.description}}</p>
-                        <a href="{% url 'main:add_item' book.id %}">
-                            <button>
-                                Add amount
-                            </button>
-                        </a> 
-                        <br>
-                        <a href="{% url 'main:subtract_item' book.id %}">
-                            <button>
-                                Subtract amount
-                            </button>
-                        </a> 
-                        <br>
-                        <a href="{% url 'main:delete_item' book.id %}">
-                            <button>
-                                Delete
-                            </button>
-                        </a> 
-                        
-                    </li>
-                {% endfor %}
-            </ol>
-        
-        <a href="{% url 'main:create_books'%}">
-            <button>
-                Add New Book
-            </button>
-        </a>
-
-        <p> Logged in as : {{account_name}}</p>
-        <h5>Sesi terakhir login: {{ last_login }}</h5>
-        <a href="{% url 'main:logout' %}">
-            <button>
-                Logout
-            </button>
-        </a>
-
+        <main>
+            <section class="py-3 text-center container">
+              <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                  <h1 class="fw-light">List of Books Galaxy Library</h1>
+                  <p class="lead">Sabrina Atha Shania <br> 2206829591 <br> </p>
+                  <p>
+                    <a href="{% url 'main:create_books'%}" class="btn btn-secondary my-2">Add new Collections</a>
+                    <a href="{% url 'main:logout' %}" class="btn btn-secondary my-2">Log Out</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+          
+            <div class="album py-3 bg-body-tertiary">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for book in books %}
+                    <div class="container">
+                        <div class="card">
+                            <div class="face face1">
+                            <div class="content">
+                                <span class="stars"></span>
+                                <h4>{{book.name}}</h4>
+                                <p>Amount of this book : {{book.amount}}</p>
+                                <p>Description : {{book.description}}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                      <a href="{% url 'main:add_item' book.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">+</button></a>
+                                      <a href="{% url 'main:subtract_item' book.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">-</button></a>
+                                      <a href="{% url 'main:delete_item' book.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="face face2">
+                            <h2>{{ forloop.counter }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+              </div>
+            </div>
+          
+          </main>
     </body>
-</html>
 
 {% endblock content %}
