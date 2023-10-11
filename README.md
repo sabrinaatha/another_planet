@@ -4,6 +4,92 @@ NPM     : 2206829591
 
 Kelas   : PBP A
 
+------------------------------------------------ TUGAS 6 ------------------------------------------------
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+    - Asynchronous programming, atau pemrograman asinkron, adalah paradigma pemrograman di mana eksekusi program tidak terjadi secara berurutan atau blok. Sebaliknya, dalam pemrograman asinkron, tugas-tugas yang memerlukan waktu seperti operasi I/O (Input/Output), permintaan jaringan, atau tugas berat lainnya dapat dikerjakan secara bersamaan tanpa harus menunggu satu tugas selesai terlebih dahulu sebelum melanjutkan yang lain.
+        - Dalam pemrograman sinkron, eksekusi kode berlangsung secara berurutan, satu pernyataan setelah yang lain (Blocking Execution). Jika ada tugas yang memerlukan waktu (seperti membaca data dari disk atau mengirim permintaan ke server), program akan menghentikan eksekusi dan menunggu hingga tugas tersebut selesai. Ini dapat menyebabkan aplikasi menjadi lambat dan tidak responsif.
+        - Pemrograman asinkron sering digunakan dalam aplikasi yang bersifat event-driven, seperti aplikasi web yang menanggapi permintaan HTTP dari berbagai klien secara bersamaan.
+        - Dalam pemrograman asinkron, sering digunakan mekanisme seperti callback functions atau promises untuk mengatur tugas yang akan dieksekusi setelah operasi asinkron selesai.
+        - Aplikasi asinkron cenderung lebih responsif karena dapat menjalankan tugas lain selagi menunggu tugas yang memerlukan waktu selesai. Ini berguna dalam aplikasi real-time atau yang harus menangani banyak permintaan bersamaan.
+    
+    - Synchronous programming, atau pemrograman sinkron, adalah paradigma pemrograman di mana eksekusi program berlangsung secara berurutan dan blok. Dalam pemrograman sinkron, setiap pernyataan atau tugas dieksekusi satu per satu, dan eksekusi program akan menunggu hingga tugas saat ini selesai sebelum melanjutkan ke tugas berikutnya.
+        - Dalam pemrograman asinkron, program tidak menunggu tugas yang memerlukan waktu selesai. Sebaliknya, ia melanjutkan eksekusi kode ke pernyataan berikutnya dan akan kembali ke tugas yang belum selesai nanti (Non-Blocking Execution). Sehingga program dapat melakukan banyak tugas secara bersamaan tanpa harus menunggu yang satu selesai terlebih dahulu. 
+        - Kode dalam pemrograman sinkron bersifat berurutan dan mudah dibaca karena tugas dieksekusi satu per satu. Namun, jika ada tugas yang lambat, ini dapat menghambat seluruh aliran eksekusi (Sequential Nature).
+        - Fungsi yang mengandung operasi I/O sering kali bersifat blocking, artinya mereka akan menghentikan eksekusi sampai tugas selesai.
+
+
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+    Paradigma event-driven programming adalah pendekatan dalam pengembangan software di mana program merespons peristiwa (events) yang terjadi, baik dari pengguna atau sistem, dan menjalankan kode berdasarkan peristiwa tersebut. Peristiwa tersebut seperti klik, input, atau perubahan data, daripada mengikuti alur eksekusi yang sekuensial. Dalam paradigma ini, program terutama terdiri dari handler (pemroses) peristiwa yang akan dieksekusi saat suatu peristiwa terjadi. Ini memungkinkan program untuk merespons secara dinamis terhadap interaksi pengguna dan perubahan yang terjadi, sehingga lebih interaktif dan responsif. Berbeda dengan alur program yang sekuensial, di mana instruksi dieksekusi satu per satu dari atas ke bawah, dalam paradigma ini, program terutama terdiri dari handler (pemroses) peristiwa yang akan dieksekusi saat suatu peristiwa tertentu terjadi. Pentingnya paradigma ini adalah sebagai berikut:
+    
+    - Program yang dibangun dengan pendekatan event-driven mampu merespons perubahan dan interaksi pengguna dengan cepat.
+    - Paradigma ini memungkinkan pengguna untuk berinteraksi dengan aplikasi dengan cara yang lebih alami dan dinamis. Hal ini membuat aplikasi lebih mudah digunakan dan lebih intuitif.
+    - Event-driven programming memungkinkan pemisahan logika aplikasi. Kode yang menangani peristiwa dapat terpisah dari kode inti aplikasi, sehingga memungkinkan pengembang untuk lebih mudah memelihara dan memperbarui program.
+
+    
+    Salah satu contoh penerapannya dalam JavaScript dan AJAX dalam tugas ini adalah melibatkan penggunaan tombol, input, atau elemen antarmuka lainnya untuk memicu permintaan ke server tanpa perlu refresh seluruh halaman web. Dalam konteks ini, AJAX (Asynchronous JavaScript and XML) dapat digunakan untuk melakukan permintaan ke server secara asinkron dan menangani responsnya dengan paradigma event-driven.
+
+
+
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+    AJAX adalah teknik baru untuk membuat aplikasi web yang lebih baik dan interaktif dengan bantuan XML, HTML, CSS, dan JavaScript. AJAX adalah pendekatan dalam pengembangan aplikasi web yang memungkinkan kita untuk mengirim permintaan ke server dan menerima respons tanpa harus memuat ulang seluruh halaman web. Asynchronous programming memungkinkan operasi-operasi ini untuk berjalan secara independen, tanpa menghentikan eksekusi program utama atau proses lain dalam aplikasi. Berikut adalah penjelasan lebih rinci tentang penerapan asynchronous programming pada AJAX:
+    
+    - Dalam AJAX, pengembang dapat membuat permintaan HTTP ke server secara asinkron menggunakan objek XMLHttpRequest (XHR) atau menggunakan API Fetch. Perintah ini tidak menghalangi eksekusi kode JavaScript lainnya karena berjalan di latar belakang.
+    - Setelah permintaan dikirim, pengembang mengaitkan handler event ke objek XHR atau menggunakan promise pada Fetch API. Ini berarti bahwa kita menentukan tindakan apa yang harus diambil saat permintaan berhasil diselesaikan atau gagal.
+    - Pengembang juga dapat menggunakan callback functions sebagai handler event untuk merespons hasil permintaan. Callback ini akan dieksekusi saat permintaan selesai. Ini adalah prinsip dasar dari asynchronous programming di AJAX.
+    - Selain callback, JavaScript juga mendukung promises, yang memungkinkan untuk lebih mudah mengelola operasi asinkron. Dengan Fetch API, dapat menggantikan callback dengan promises untuk mengatasi permintaan dan respons. Ini membuat kode menjadi lebih mudah dibaca dan menghindari callback hell (callback dalam callback dalam callback).
+    - Asynchronous programming dalam AJAX memungkinkan aplikasi web untuk tetap responsif. Selama permintaan ke server sedang berlangsung, aplikasi tetap dapat merespons tindakan pengguna dan menjalankan kode lainnya tanpa harus menunggu permintaan selesai.
+
+    Penerapan asynchronous programming pada AJAX sangat penting dalam pengembangan aplikasi web modern. AJAX memungkinkan halaman web untuk memperbarui data secara asinkronus dengan mengirimkan data ke peladen di balik layar. Hal tersebut berarti bahwa pengembang dapat memperbarui sebagian elemen data pada halaman tanpa harus me-reload halaman secara keseluruhan. Hal ini mengatasi operasi jaringan dan interaksi dengan server tanpa menghentikan atau menghambat eksekusi kode lainnya, sehingga menciptakan pengalaman pengguna yang lebih baik dan responsif.
+
+
+
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+    Fetch API adalah API JavaScript yang memungkinkan untuk melakukan permintaan jaringan (network requests) dalam pengembangan aplikasi web. API ini dirancang untuk menggantikan pendekatan sebelumnya, seperti XMLHttpRequest (XHR), dengan pendekatan yang lebih modern dan berbasis promise. Berikut detail penjelasan mengenai Fetch API.
+
+    - Fetch API adalah API bawaan dari JavaScript yang memungkinkan untuk melakukan permintaan jaringan (seperti GET, POST, PUT, DELETE) dan menangani respons dalam format berbagai jenis, termasuk JSON. Fetch API juga mendukung promise, sehingga memudahkan pengelolaan operasi asinkron.
+    - Fetch API lebih ringan dan memiliki ukuran yang lebih kecil daripada jQuery karena ini adalah bagian dari inti JavaScript modern. Karena itu, Fetch API dapat memberikan kinerja yang lebih baik jika Anda hanya perlu fitur-fitur dasar pengiriman permintaan jaringan.
+    - Fetch API adalah bagian dari spesifikasi JavaScript modern dan mendapatkan dukungan yang kuat dari browser saat ini. Dengan demikian, dukungan untuk Fetch API akan terus ada dan berkembang.
+    - Fetch API menggunakan promise untuk mengelola operasi asinkron. Ini membuat kode menjadi lebih bersih dan mudah dibaca, terutama untuk permintaan yang rumit dengan beberapa langkah.
+    - Tidak ada ekosistem plugin khusus untuk Fetch API. Biasanya pengembang harus menulis kode kustom atau menggunakan pustaka-pustaka terkait untuk tugas tertentu.
+
+
+    jQuery adalah sebuah pustaka JavaScript yang sangat populer dan digunakan secara luas dalam pengembangan aplikasi web. Dibuat oleh John Resig, jQuery menyediakan berbagai fasilitas untuk menyederhanakan interaksi dengan Dokumen Objek Model (DOM), menangani peristiwa (events), melakukan permintaan jaringan (AJAX), membuat animasi, dan banyak lagi. Berikut detail penjelasan mengenai jQuery.
+    - jQuery adalah pustaka JavaScript yang menyediakan berbagai fasilitas, termasuk AJAX (Asynchronous JavaScript and XML) untuk permintaan jaringan. jQuery juga memungkinkan untuk melakukan permintaan dan menangani respons dalam berbagai format. Ini termasuk dukungan untuk operasi asinkron dengan callback functions.
+    - jQuery adalah pustaka yang lebih besar dengan lebih banyak fitur daripada Fetch API. Jika hanya membutuhkan fitur AJAX, menggunakan jQuery dapat mempengaruhi kinerja karena pustaka ini memiliki ukuran yang lebih besar.
+    -  jQuery adalah pustaka yang sudah ada sejak lama dan banyak digunakan dalam proyek-proyek yang ada. Meskipun masih ada banyak proyek yang menggunakan jQuery, penggunaannya telah menurun dalam pengembangan web modern, dan banyak pengembang lebih suka menggunakan pendekatan bawaan seperti Fetch API.
+    - jQuery sering dianggap lebih mudah digunakan oleh beberapa pengembang, terutama yang tidak terlalu akrab dengan promise atau ingin berfokus pada tugas-tugas sederhana. jQuery menggunakan callback functions yang lebih familiar bagi banyak pengembang.
+    - jQuery memiliki ekosistem yang kaya dengan berbagai plugin yang dapat digunakan untuk tugas-tugas khusus seperti animasi, manipulasi DOM, dan interaksi pengguna.
+
+
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    1. Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
+        - Mengerjakan alur program dari AJAX GET
+            1. Buat fungsi pada views.py untuk menampilkan data produk pada HTML dengan menggunakan fetch dan menambahkan produk baru ke basis data dengan AJAX
+            2. Menambahkan path untuk mengarahkan ke fungsi views yang sudah dibuat sebelumnya
+            3. Menambahkan id dan juga script yang diperlukan di dalam file main.html
+            4. Membuat modal sebagai form di dalam file main.html 
+
+        - Mengerjakan alur program dari AJAX POST
+            1. Membuat fungsi baru di dalam script di file main.html
+            2. Tambahkan fungsi onclick untuk menambahkan item collections
+        
+    2. Melakukan perintah collectstatic
+        Perintah collecstatic dilakukan menyesuaikan tutorial 2 pada bagian Menambahkan Konfigurasi Deployment ke PaaS PBP Fasilkom UI
+
+    3. Menjawab pertanyaan di dalam file README.md
+
+    4. Melakukan git workflow (add, commit, push)
+
+    5. Melakukan deployment ke PaaS PBP Fasilkom UI
+        - Mengunduh environ 
+        - Membuat beberapa file dan folder terkait deployment (Procfile, .dockerignore, Dockerfile, folder .github dan workflows, pbp-deploy.yml)
+        - Mengedit settings.py dengan menambahkan beberapa kode baru terkait deployment
+        - Set repository secret pada Secrets and variables di settings repository github dengan memasukkan DOKKU_SERVER_IP, DOKKU_APP_NAME, dan DOKKU_SSH_PRIVATE_KEY
+        akses deployment : http://sabrina-atha-tugas.pbp.cs.ui.ac.id
+
+
 ------------------------------------------------ TUGAS 5 ------------------------------------------------
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
     Elemen selector terdiri dari 3 jenis, Element selector, Id selector, dan Class selector yang memiliki manfaat tersendiri, diantaranya sebagai berikut.
@@ -23,7 +109,7 @@ Kelas   : PBP A
         2. Dapat lebih mudah dipelihara karena dapat dengan jelas melihat bahwa class tersebut digunakan untuk menggambarkan gaya atau fungsi tertentu dalam halaman web.
         3. Dapat memiliki selektivitas yang Lebih Terkontrol. Selector class memiliki tingkat selektivitas yang lebih rendah dibandingkan dengan selector ID. Ini memberikan fleksibilitas dan kendali yang baik dalam mengatur tampilan elemen-elemen.
 
-==================================================================================
+
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
     HTML5 (Hypertext Markup Language 5) adalah versi terbaru dari standar HTML yang digunakan untuk membuat dan mengatur konten web. HTML5 memiliki banyak tag atau elemen yang memungkinkan pengembang web untuk menggambarkan konten dan struktur halaman web secara lebih baik. HTML5 juga memiliki beberapa perbedaan yang dapat menjadi keunggulan dibandingkan HTML, diantaranya sebagai berikut.
@@ -36,7 +122,7 @@ Kelas   : PBP A
     - Memiliki fitur yang mendukung responsivitas dan desain dapat menyesuaikan dengan berbagai perangkat dan ukuran layar
     - Memiliki penyimpanan lokal, sehingg dapat meningkatkan kinerja aplikasi web dengan mengurangi permintaan ke server.
 
-==================================================================================
+
 
 3. Jelaskan perbedaan antara margin dan padding.
     Margin dan padding adalah dua properti penting dalam CSS yang digunakan untuk mengatur tata letak elemen HTML pada halaman web. Mereka memiliki fungsi yang berbeda dan memengaruhi cara elemen-elemen berinteraksi dengan elemen-elemen sekitarnya dalam halaman. Margin memiliki fungsi untuk mengosongkan area di sekitar border (transparan). Padding memiliki fungsi untuk mengosongkan area di sekitar konten (transparan). Perbedaan diantara keduanya diantaranya sebagai berikut.
@@ -45,7 +131,8 @@ Kelas   : PBP A
     - Margin dapat memengaruhi tata letak elemen-elemen di sekitarnya, sehingga dapat memengaruhi jarak antara elemen tersebut dan elemen-elemen lainnya di sekitarnya. Sedangkan  Padding tidak berdampak pada elemen-elemen luar
     - Margin sering digunakan untuk mengontrol jarak antara elemen-elemen dengan menggunakan margin untuk memberikan jarak vertikal atau horizontal antara elemen-elemen. Sedagkan padding memengaruhi ukuran konten dalam elemen, sehingga ukuran elemen tersebut akan menjadi lebih besar
    
-==================================================================================
+
+
 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
     Tailwind CSS dan Bootstrap adalah dua framework CSS yang digunakan untuk mempercepat pengembangan tampilan web. Mereka memiliki pendekatan yang berbeda dalam cara mereka memungkinkan pengembang untuk merancang dan menggaya halaman web. Berikut adalah perbedaan antara keduanya.
 
@@ -72,7 +159,8 @@ Kelas   : PBP A
     - Bootstrap memiliki dokumentasi yang kuat dan banyak contoh yang mudah diikuti, sehingga cocok untuk pengembang yang baru memulai
     - Tailwind membutuhkan disiplin dalam penggunaannya karena perlu menggabungkan kelas utility dengan benar dan menghindari pengulangan kode yang tidak perlu
 
-==================================================================================
+
+
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
     1. Kustomisasi halaman login, register, dan tambah inventori
         - Melakukan kostumisasi halaman login, dilanjutka dengan halaman register, dan halaman tambah inventori
@@ -87,7 +175,9 @@ Kelas   : PBP A
     
     3. Menjawab pertanyaan di dalam file README.md
     4. Melakukan git workflow (add, commit, push)
-==================================================================================
+
+
+
 ------------------------------------------------ TUGAS 4 ------------------------------------------------
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
     UserCreationForm adalah impor formulir bawaan yang memudahkan pembuatan formulir pendaftaran pengguna baru dalam aplikasi web. Dengan formulir ini, pengguna baru dapat mendaftar dengan mudah di situs web Anda tanpa harus menulis kode dari awal. 
@@ -104,7 +194,7 @@ Kelas   : PBP A
     - Fitur tambahan terbatas, sehingga apabila memerlukan fitur tambahan seperti pengumpulan profil pengguna yang lebih kaya, mungkin perlu menambahkan formulir tambahan atau membuat formulir kustom
     - Bahasa bawaan pada field dalam UserCreationForm sudah ditentukan oleh Django, jadi jika ingin menggunakan nama field yang berbeda, perlu menyesuaikan model User dan formulirnya
 
-==================================================================================
+
 
 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
     Autentikasi adalah proses verifikasi identitas pengguna dengan menentukan apakah pengguna yang mencoba mengakses aplikasi adalah pengguna yang mereka klaim. Sistem autentikasi memeriksa apakah informasi yang diberikan cocok dengan yang ada di database pengguna. Apabila cocok, pengguna dianggap berhasil melakukan autentikasi. Django menyediakan sistem autentikasi bawaan yang dapat digunakan untuk mengelola autentikasi pengguna dengan mudah, termasuk penggunaan model User.
@@ -121,7 +211,7 @@ Kelas   : PBP A
     3. Sebagai pengelolaan hak akses berdasarkan peran pengguna
     4. Menyesuaikan dengan pengalaman pengguna
 
-==================================================================================
+
 
 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
     Cookies adalah potongan kecil data yang disimpan di sisi client oleh aplikasi web. Cookies digunakan dalam konteks aplikasi web untuk menyimpan informasi yang dapat diakses kembali oleh server web atau aplikasi. Cookies sering digunakan untuk mengelola data sesi pengguna, melacak preferensi, mengidentifikasi pengguna, dan banyak tujuan lainnya.
@@ -146,7 +236,7 @@ Kelas   : PBP A
     4. Cookie akan dihapus dari browser jika sudah habis masa berlakunya
         Setiap cookie memiliki waktu masa berlaku (expire time) yang ditentukan oleh server saat mengirimkannya. Ketika waktu masa berlaku ini habis, browser akan menghapus cookie tersebut dari penyimpanan lokal. Hal ini menjadi mekanisme yang penting untuk menjaga privasi dan keamanan pengguna. Ketika cookie habis masa berlakunya, pengguna tidak lagi diidentifikasi atau tidak lagi memiliki informasi sesi yang tersimpan di browser.
 
-==================================================================================
+
 
 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
     Penggunaan cookies dalam pengembangan web dapat aman jika diimplementasikan dan dikelola dengan baik. Namun, ada potensi risiko keamanan yang perlu diwaspadai. Berikut adalah beberapa risiko potensial yang terkait dengan penggunaan cookies:
@@ -161,7 +251,7 @@ Kelas   : PBP A
    4. Pastikan bahwa aplikasi tidak menyisipkan data yang tidak terpercaya secara langsung ke dalam cookie tanpa validasi atau sanitasi yang memadai
    5. Berikan pengguna opsi untuk mengelola cookie, termasuk menolak cookie yang tidak diperlukan atau tidak diinginkan.
 
-==================================================================================
+
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
     1. Mengimplementasikan fungsi registrasi, login, dan logout
@@ -193,6 +283,9 @@ Kelas   : PBP A
 
     5. Menjawab pertanyaan di dalam file README.md
     6. Melakukan git workflow (add, commit, push)
+
+
+
 ------------------------------------------------ TUGAS 3 ------------------------------------------------
 
 1. Apa perbedaan antara form POST dan form GET dalam Django?
@@ -216,7 +309,7 @@ Kelas   : PBP A
         - Cocok untuk permintaan yang dapat dibookmark karena data terlihat dalam URL, sehingga pengguna dapat menyimpan URL dan mengaksesnya kembali dengan parameter yang sama
         - Dapat di-cache oleh beberapa peramban atau server proxy karena data terlihat dalam URL
 
-==================================================================================
+
 
 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
     - XML(eXtensible Markup Language) adalah bahasa markup yang digunakan untuk mendefinisikan dan mengorganisir data terstruktur. XML digunakan untuk menyimpan, mengirim, dan mengolah data dalam format hierarkis yang dapat disesuaikan dengan kebutuhan aplikasi.
@@ -253,7 +346,7 @@ Kelas   : PBP A
         - HTML enggunakan elemen dan tag markup seperti <p> (paragraf), <img> (gambar), dan <a> (tautan)
         - HTML digunakan untuk membuat halaman web yang dapat dilihat oleh peramban web dan diakses oleh pengguna
 
-==================================================================================
+
 
 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
     JSON (JavaScript Object Notation) sering digunakan dalam pertukaran data antara aplikasi web modern karena memiliki keunggulan keunggulan dibandingkan yang lainnya dan menjadikannya pilihan yang sangat baik dalam lingkungan ini, diantaranya sebagai berikut.
@@ -283,7 +376,7 @@ Kelas   : PBP A
     JSON telah menjadi standar de facto dalam pertukaran data dalam pengembangan web, dan ada banyak dukungan komunitas dan pustaka untuk mengolah data JSON di berbagai bahasa pemrograman.
 
 
-==================================================================================
+
 
 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
     1. Membuat input form 
@@ -311,7 +404,7 @@ Kelas   : PBP A
     5. Mengakses kelima URL menggunakan Postman
     6. Melakukan git workflow (add, commit, push)
 
-==================================================================================
+
 
 5. Hasil Screenshot postman
     - HTML
@@ -359,7 +452,6 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
         - Apabila deployment berhasil, link aplikasi Adaptable sudah dapat dibuka oleh teman-teman
 
 
-==================================================================================
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 
@@ -377,7 +469,7 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
 
    Kaitan antara urls.py, views.py, models.py, dan berkas html adalah urls.py yang bertugas mem-parse argumen dari user dan berkas html yang berisi template web akan memberikan outputnya ke views.py. Selanjutnya, ketika ada query pemanggilan data dari views.py, models.py akan menjembatani pemanggilan data ke database. Kemudian views.py akan menggabungkan dan mengolahnya sehingga menjadi satu halaman web yang utuh.
 
-==================================================================================
+
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
@@ -391,7 +483,7 @@ Tautan link adaptable : https://galaxylibrary.adaptable.app
 
     Iya, Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, tetapi akan sulit, tidak efisien, tidak efektif, dan tidak produktif. Oleh karena itu, sangat disarankan untuk menggunakan virtual environment dalam pengembangan proyek Django. Melalui penggunakan virtual environment, akan menjadi praktik yang baik dalam pengembangan Django karena memberikan sejumlah keuntungan yang telah dijelaskan sebelumnya, seperti isolasi dependensi, menghindari konflik, dan menjaga kebersihan lingkungan pengembangan.
 
-==================================================================================
+
 
 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya
     1. MVC atau dikenal sebagai Model View Controller adalah sebuah pola arsitektur atau desain dalam pengembangan perangkat lunak seperti membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari:
