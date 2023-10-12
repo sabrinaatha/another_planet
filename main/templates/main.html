@@ -222,10 +222,13 @@
                 const products = await getProducts()
                 let htmlString = `<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">`
                 let counter = 0
+                const totalProducts = products.length
                 products.forEach((book) => {
                     counter++
+                    const isLastItem = counter === totalProducts
+                    const backgroundColor = isLastItem ? 'background-color: yellow;' : '';
                     htmlString += `<div class="container">
-                        <div class="card {% if forloop.last %} last-item{% endif %}">
+                        <div class="card ${isLastItem ? 'last-item' : ''}"">
                             <div class="face face1">
                                 <div class="content">
                                     <span class="stars"></span>
