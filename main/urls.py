@@ -19,5 +19,5 @@ urlpatterns = [
     path('add_item/<int:item_id>/', add_item, name='add_item'),
     path('subtract_item/<int:item_id>/', subtract_item, name='subtract_item'),
     path('get-product/', get_product_json, name='get_product_json'),
-    path('create-ajax/', add_product_ajax, name='add_product_ajax') 
+    path('create-ajax/', add_product_ajax, name='add_product_ajax'),
 ]

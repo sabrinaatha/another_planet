@@ -2,7 +2,7 @@
 import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Item
-from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, JsonResponse
 from main.forms import ProductForm
 from django.urls import reverse
 from django.core import serializers
