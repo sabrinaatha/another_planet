@@ -1,6 +1,5 @@
 # Create your views here.
 import datetime
-import json
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Item
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound, JsonResponse
@@ -26,7 +25,7 @@ def show_main(request) :
         'application_name': 'Galaxy Library',
         'count': count,
         'books': books,
-        # 'last_login': request.COOKIES['last_login'],
+        'last_login': request.COOKIES['last_login'],
     }
 
     return render(request, "main.html", context)
@@ -132,22 +131,3 @@ def add_product_ajax(request):
         return HttpResponse(b"CREATED", status=201)
 
     return HttpResponseNotFound()
-
-@csrf_exempt
-def create_product_flutter(request):
-    if request.method == 'POST':
-        
-        data = json.loads(request.body)
-
-        new_product = Item.objects.create(
-            user = request.user,
-            name = data["name"],
-            amount = int(data["amount"]),
-            description = data["description"]
-        )
-
-        new_product.save()
-
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error"}, status=401)
